@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Text.Json.Serialization;
 
 namespace Blazor.Diagrams.Core.Models.Base;
+
 
 public abstract class SelectableModel : Model
 {

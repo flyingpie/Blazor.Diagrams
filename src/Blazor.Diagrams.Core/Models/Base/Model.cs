@@ -1,9 +1,8 @@
 ﻿using System.Text.Json.Serialization;
-using Newtonsoft.Json;
 
 namespace Blazor.Diagrams.Core.Models.Base;
 
-[JsonObject(MemberSerialization.OptIn)]
+// [JsonPolymorphic(TypeDiscriminatorPropertyName = "$discr")]
 public abstract class Model
 {
     private bool _visible = true;

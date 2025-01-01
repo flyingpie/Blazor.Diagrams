@@ -1,9 +1,12 @@
-﻿using Blazor.Diagrams.Core.Geometry;
+﻿using System.Text.Json.Serialization;
+using Blazor.Diagrams.Core.Geometry;
 using Blazor.Diagrams.Core.Models.Base;
-using Newtonsoft.Json;
 
 namespace Blazor.Diagrams.Core.Models;
 
+[JsonOptIn]
+// [JsonDerivedType(typeof(ListFiles))]
+[JsonPolymorphic]
 public class NodeModel : MovableModel, IHasBounds, IHasShape, ILinkable
 {
     private readonly List<PortModel> _ports = new();
@@ -17,6 +20,7 @@ public class NodeModel : MovableModel, IHasBounds, IHasShape, ILinkable
     {
     }
 
+    [JsonConstructor]
     public NodeModel(string id, Point? position = null) : base(id, position)
     {
     }

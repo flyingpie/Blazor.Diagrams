@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.Json.Serialization;
 using Blazor.Diagrams.Core.Geometry;
 
 namespace Blazor.Diagrams.Core.Models.Base;
@@ -19,6 +20,7 @@ public abstract class MovableModel : SelectableModel
         Position = position ?? Point.Zero;
     }
 
+    [JsonInclude]
     public Point Position { get; set; }
 
     public virtual void SetPosition(double x, double y) => Position = new Point(x, y);
